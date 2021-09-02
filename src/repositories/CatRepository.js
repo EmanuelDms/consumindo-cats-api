@@ -3,7 +3,9 @@ const resource = 'breeds';
 
 const catRepository = {
     getAll(options) {
-        return axios.get(resource, options);
+        return axios.get(resource, {
+            params: options
+        });
     },
 
     getSearch(id, options) {

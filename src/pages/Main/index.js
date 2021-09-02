@@ -11,9 +11,7 @@ export default function Main() {
         async function load(params) {
             try {
                 const response = await CatRepository.getAll({
-                    params: {
-                        limit: 5
-                    }
+                    limit: 5
                 });
                 setCats(response.data);
             } catch (error) {
@@ -48,7 +46,6 @@ export default function Main() {
                             <p><strong>Inteligência: </strong>{cat.intelligence}</p>
                             <p><strong>Wikipedia Link: </strong><a href={cat.wikipedia_url}>{cat.wikipedia_url}</a></p>
                         </div>
-                        <div className="clear"></div>
                     </div>
                 ))}
             </MainPage>
