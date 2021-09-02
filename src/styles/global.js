@@ -36,7 +36,15 @@ h1{
     color: var(--purple);
 }
 
-.clear{
-  clear: both;
+button{
+  font-size: 1.5rem;
+  background-color: navy;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	&:hover {
+		transform: translate(1px, 1px);
+	}
 }
 `;

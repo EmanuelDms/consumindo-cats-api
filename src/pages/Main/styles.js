@@ -33,7 +33,7 @@ export const Form = styled.form`
 `;
 
 export const MainPage = styled.main`
-    padding: 30px 20px;
+    /* padding: 30px 20px; */
 
     .cat-item{
         // lógica para caso esteja selecionado
