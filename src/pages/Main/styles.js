@@ -37,7 +37,8 @@ export const MainPage = styled.main`
 
     .cat-item{
         // lógica para caso esteja selecionado
-        border: 1px solid var(--purple);
+        /* border: 1px solid var(--purple); */
+        border: 1px solid var(--gray);
         border-radius: 10px;
         padding: 20px;
         padding-bottom: 30px;
@@ -45,6 +46,11 @@ export const MainPage = styled.main`
 
         &{
             margin-top: 20px;
+        }
+
+        &:hover{
+            border: 1px solid var(--purple);
+            transition: all 0.4s linear;
         }
 
         img{
