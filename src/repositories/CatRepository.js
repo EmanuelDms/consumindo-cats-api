@@ -2,14 +2,8 @@ import axios from '../services/axios';
 const resource = 'breeds';
 
 const catRepository = {
-    getAll(options) {
-        return axios.get(resource, {
-            params: options
-        });
-    },
-
-    getSearch(id, options) {
-        return axios.get(`${resource}/`)
+    get(options) {
+        return axios.get(resource, { params: options });
     }
 }
 
