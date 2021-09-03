@@ -19,7 +19,7 @@ export default function Panel({ index, cat }) {
                 id={`panel${index}bh-header`}
                 aria-controls={`panel${index}bh-content`}
             >
-                <img src={cat.image.url} alt={cat.name} />
+                {cat?.image?.url && <img src={cat?.image?.url} alt={cat.name} />}
             </AccordionSummary>
             <AccordionDetailsStyled>
                 <Typography>Some more text</Typography>
