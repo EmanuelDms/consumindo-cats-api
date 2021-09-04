@@ -5,21 +5,27 @@ import CatCards from '../../components/CatCards';
 import CatRepository from "../../repositories/CatRepository";
 
 export default function Main() {
+    const [results, setResults] = useState([])
     const [cats, setCats] = useState([]);
     const [search, setSearch] = useState('');
 
     useEffect(() => {
         async function load() {
             try {
-                const response = await CatRepository.get(search);
-                setCats(response.data);
+                const { data } = await CatRepository.get();
+                setResults(data);
             } catch (error) {
                 console.log(error);
             }
         }
 
         load();
-    }, [search]);
+    }, [])
+
+    useEffect(() => {
+        const filtered = !!search ? results.filter(cat => cat.name.toLowerCase().includes(search.toLowerCase())) : results;
+        setCats(filtered)
+    }, [results, search]);
 
     return (
         <Container>
