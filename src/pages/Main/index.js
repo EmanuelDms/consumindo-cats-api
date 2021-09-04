@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Header, Form, MainPage } from './styles';
-import CatCards from '../../components/CatCards';
+import CatList from '../../components/CatList';
 
 import CatRepository from "../../repositories/CatRepository";
 
@@ -37,7 +37,7 @@ export default function Main() {
                 </Form>
             </Header>
             <MainPage>
-                <CatCards cats={cats} />
+                <CatList cats={cats} />
             </MainPage>
         </Container>
     )

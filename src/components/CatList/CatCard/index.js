@@ -1,18 +1,13 @@
-import React, { useState } from 'react';
-import { AccordionStyled, AccordionDetailsStyled, AccordionSummaryStyled } from './styles';
+import React from 'react';
+import { AccordionStyled, AccordionDetailsStyled, AccordionSummaryStyled } from '../styles';
 
-export default function Panel({ cat, index }) {
+export default function CatCard({ expanded = false, cat, index, ...rest }) {
     // Sets the default value of expanded state true if map's index is identical equals zero
-    const [expanded, setExpanded] = useState((index === 0) ? true : false);
-
-    const handleChange = (panel) => (evt, isExpanded) => {
-        setExpanded(isExpanded ? panel : false);
-    };
-
     return (
         <AccordionStyled
-            expanded={expanded === true}
-            onChange={handleChange(true)}
+            expanded={expanded}
+            {...rest}
+        // onChange={handleChange(true)}
         >
             <AccordionSummaryStyled
                 id={`panel${index}bh-header`}
