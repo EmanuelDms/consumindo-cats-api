@@ -7,7 +7,7 @@ export default function CatCards({ cats }) {
         <>
             {
                 cats.map((cat, index) => (
-                    <Panel key={index} sd={true} index={index} cat={cat} />
+                    <Panel key={index} index={index} cat={cat} />
                 ))
             }
         </>

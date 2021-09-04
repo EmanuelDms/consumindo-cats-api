@@ -6,7 +6,7 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 export const AccordionStyled = styled(Accordion)`
     // lógica para caso esteja selecionado
     /* border: 1px solid var(--purple); */
-    border: 1px solid ${props => (props.isExpanded ? "#8A2BE2" : "#DFDFDF")};
+    border: 1px solid ${props => (props.expanded ? "#8A2BE2" : "#DFDFDF")};
     padding: 20px;
     padding-bottom: 30px;
     margin-top: 20px;

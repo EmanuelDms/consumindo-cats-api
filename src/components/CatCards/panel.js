@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AccordionStyled, AccordionDetailsStyled, AccordionSummaryStyled } from './styles';
 
-export default function Panel({ index, cat }) {
+export default function Panel({ cat, index }) {
     const [expanded, setExpanded] = useState(false);
 
     const handleChange = (panel) => (evt, isExpanded) => {
@@ -10,7 +10,6 @@ export default function Panel({ index, cat }) {
 
     return (
         <AccordionStyled
-            isExpanded={expanded}
             expanded={expanded === true}
             onChange={handleChange(true)}
         >
