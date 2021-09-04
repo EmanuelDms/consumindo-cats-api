@@ -2,12 +2,10 @@ import React from 'react';
 import { AccordionStyled, AccordionDetailsStyled, AccordionSummaryStyled } from '../styles';
 
 export default function CatCard({ expanded = false, cat, index, ...rest }) {
-    // Sets the default value of expanded state true if map's index is identical equals zero
     return (
         <AccordionStyled
             expanded={expanded}
             {...rest}
-        // onChange={handleChange(true)}
         >
             <AccordionSummaryStyled
                 id={`panel${index}bh-header`}
