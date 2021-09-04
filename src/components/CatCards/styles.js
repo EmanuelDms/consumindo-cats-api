@@ -25,14 +25,6 @@ export const AccordionStyled = styled(Accordion)`
         width: 200px;
         border-radius: 14px;
     }
-`;
-
-export const AccordionDetailsStyled = styled(AccordionDetails)`
-    margin-left: 20px;
-
-    * {
-        margin: 20px 0;
-    }
 
     h1{
         font-size: 20px;
@@ -41,6 +33,14 @@ export const AccordionDetailsStyled = styled(AccordionDetails)`
 
     h3{
         font-weight: 700;
+    }
+`;
+
+export const AccordionDetailsStyled = styled(AccordionDetails)`
+    margin-left: 20px;
+
+    * {
+        margin: 20px 0;
     }
 
 `;

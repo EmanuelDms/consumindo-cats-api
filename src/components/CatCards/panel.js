@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { AccordionStyled, AccordionDetailsStyled } from './styles';
 import AccordionSummary from "@material-ui/core/AccordionSummary";
-import Typography from "@material-ui/core/Typography";
 
 export default function Panel({ index, cat }) {
     const [expanded, setExpanded] = useState(false);
@@ -20,9 +19,16 @@ export default function Panel({ index, cat }) {
                 aria-controls={`panel${index}bh-content`}
             >
                 {cat?.image?.url && <img src={cat?.image?.url} alt={cat.name} />}
+                <h1>{cat.name}</h1>
+                <h3>Origem: {cat.origin}</h3>
+                <p>Descrição:</p>
+                <p>{cat.description}</p>
             </AccordionSummary>
             <AccordionDetailsStyled>
-                <Typography>Some more text</Typography>
+                <p><strong>Temperamento: </strong>: {cat.temperament}</p>
+                <p><strong>Adaptabilidade: </strong>: {cat.adaptability}</p>
+                <p><strong>Inteligência: </strong>: {cat.intelligence}</p>
+                <p><strong>Wikipedia Link: </strong>: <a href={cat.wikipedia_url}>{cat.wikipedia_url}</a></p>
             </AccordionDetailsStyled>
         </AccordionStyled>
     )
