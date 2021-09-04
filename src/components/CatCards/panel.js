@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { AccordionStyled, AccordionDetailsStyled } from './styles';
-import AccordionSummary from "@material-ui/core/AccordionSummary";
+import { AccordionStyled, AccordionDetailsStyled, AccordionSummaryStyled } from './styles';
 
 export default function Panel({ index, cat }) {
     const [expanded, setExpanded] = useState(false);
@@ -11,10 +10,11 @@ export default function Panel({ index, cat }) {
 
     return (
         <AccordionStyled
+            isExpanded={expanded}
             expanded={expanded === true}
             onChange={handleChange(true)}
         >
-            <AccordionSummary
+            <AccordionSummaryStyled
                 id={`panel${index}bh-header`}
                 aria-controls={`panel${index}bh-content`}
             >
@@ -25,7 +25,7 @@ export default function Panel({ index, cat }) {
                     <p>Descrição:</p>
                     <p>{cat.description}</p>
                 </div>
-            </AccordionSummary>
+            </AccordionSummaryStyled>
             <AccordionDetailsStyled>
                 <p><strong>Temperamento: </strong>{cat.temperament}</p>
                 <p><strong>Adaptabilidade: </strong>{cat.adaptability}</p>
