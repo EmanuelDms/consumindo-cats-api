@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { AccordionStyled, AccordionDetailsStyled, AccordionSummaryStyled } from './styles';
 
 export default function Panel({ cat, index }) {
-    const [expanded, setExpanded] = useState(false);
+    // Sets the default value of expanded state true if map's index is identical equals zero
+    const [expanded, setExpanded] = useState((index === 0) ? true : false);
 
     const handleChange = (panel) => (evt, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
