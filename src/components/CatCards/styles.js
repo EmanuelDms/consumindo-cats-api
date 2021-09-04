@@ -6,15 +6,11 @@ export const AccordionStyled = styled(Accordion)`
     // lógica para caso esteja selecionado
     /* border: 1px solid var(--purple); */
     border: 1px solid var(--gray);
-    border-radius: 10px;
     padding: 20px;
     padding-bottom: 30px;
+    margin-top: 20px;
     display: flex;
-
-    &{
-        margin-top: 20px;
-    }
-
+    
     &:hover{
         border: 1px solid var(--purple);
         transition: all 0.4s linear;
@@ -25,19 +21,31 @@ export const AccordionStyled = styled(Accordion)`
         width: 200px;
         border-radius: 14px;
     }
+    .summaryDetails{
+        margin-left: 20px;
 
-    h1{
-        font-size: 20px;
-        margin: 0 0 20px 0;
+        &:first-child{
+            margin-top: 0;
+        }
+
+        & > *{
+            margin: 20px 0;
+        }
+
+        h1{
+            font-size: 20px;
+        }
+    
+        h3{
+            font-weight: 700;
+        }
     }
 
-    h3{
-        font-weight: 700;
-    }
 `;
 
 export const AccordionDetailsStyled = styled(AccordionDetails)`
-    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
 
     * {
         margin: 20px 0;
