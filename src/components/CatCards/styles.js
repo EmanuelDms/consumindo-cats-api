@@ -23,18 +23,17 @@ export const AccordionStyled = styled(Accordion)`
         border-radius: 14px;
     }
     .summaryDetails{
+        display: flex;
+        flex-direction: column;
         width: 50vw;
-        margin-left: 20px;
+        margin-left: 25px;
 
-        &:first-child{
-            margin-top: 0;
-        }
-
-        & > *{
-            margin: 20px 0;
+        * {
+        margin: 10px 0;
         }
 
         h1{
+            margin-top: 0;
             font-size: 20px;
         }
     
@@ -51,6 +50,10 @@ export const AccordionDetailsStyled = styled(AccordionDetails)`
 
     * {
         margin: 20px 0;
+    }
+
+    &:first-child{
+        margin-top: 0;
     }
 
 `;
