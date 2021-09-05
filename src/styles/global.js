@@ -37,9 +37,9 @@ h1{
 }
 
 button{
-  font-size: 1.5rem;
-  background-color: navy;
-	color: white;
+    font-size: 1.5rem;
+    background-color: navy;
+    color: white;
 	border: none;
 	border-radius: 10px;
 	cursor: pointer;
