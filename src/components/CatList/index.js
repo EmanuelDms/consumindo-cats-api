@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { usePagination } from "../../contexts/PaginationContext";
 import { CatCardStyled } from "./styles";
 
-export default function CatList({ cats, page, count }) {
+export default function CatList({ cats }) {
     const [expandedIndex, setExpandedIndex] = useState(0);
     const [willCloseCard, setWillCloseCard] = useState(false);
     const [paginatedCats, setPaginatedCats] = useState([]);
+    const { page } = usePagination();
 
     useEffect(() => {
         let perPage = 5;

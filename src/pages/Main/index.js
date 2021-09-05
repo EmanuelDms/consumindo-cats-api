@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Header, Form, MainPage, Paginate } from './styles';
+import { Container, Header, MainPage, Paginate } from './styles';
 import CatList from '../../components/CatList';
 
 import CatRepository from "../../repositories/CatRepository";
+import { usePagination } from '../../contexts/PaginationContext';
 
 export default function Main() {
     const [results, setResults] = useState([])
     const [cats, setCats] = useState([]);
     const [search, setSearch] = useState('');
-    const [page, setPage] = useState(1);
-    const [count, setCount] = useState(1);
+    const { page, numberOfPages, setPage, setCount } = usePagination();
 
     useEffect(() => {
         async function load() {
@@ -31,8 +31,8 @@ export default function Main() {
     }, [results, search]);
 
     useEffect(() => {
-        setCount(Math.ceil(cats.length / 5));
-    }, [cats]);
+        setCount(cats.length);
+    }, [cats.length]);
 
     const handleChange = (event, value) => {
         setPage(value);
@@ -42,14 +42,14 @@ export default function Main() {
         <Container>
             <Header>
                 <h3>Cats</h3>
-                <Form >
+                <form>
                     <label>Buscar raça: </label>
                     <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
-                </Form>
+                </form>
             </Header>
-            <Paginate count={count} page={page} onChange={handleChange} />
+            <Paginate count={numberOfPages} page={page} onChange={handleChange} />
             <MainPage>
-                <CatList cats={cats} page={page} count={count} />
+                <CatList cats={cats} />
             </MainPage>
         </Container>
     )
