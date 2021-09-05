@@ -44,7 +44,11 @@ export default function Main() {
             }
         },
         prev() {
-            setPaginate(paginate.page - 1);
+            const isFirstPage = paginate.page < 2;
+
+            if (!isFirstPage) {
+                setPaginate({ page: paginate.page - 1, totalPage: paginate.totalPage });
+            }
         }
     };
 
@@ -59,7 +63,7 @@ export default function Main() {
             </Header>
             <Paginate>
                 <div className="first">&#171;</div>
-                <div className="prev">&lt;</div>
+                <div className="prev" onClick={() => handleControls.prev()}>&lt;</div>
                 <div className="numbers">
                     <div>{paginate.page}</div>
                 </div>
