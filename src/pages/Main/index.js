@@ -37,11 +37,10 @@ export default function Main() {
 
     const handleControls = {
         next() {
-            setPaginate({ page: paginate.page + 1, totalPage: paginate.totalPage });
 
-            const lastPage = paginate.page > paginate.totalPage;
-            if (lastPage) {
-                setPaginate({ page: paginate.page - 1, totalPage: paginate.totalPage });
+            const lastPage = paginate.page >= paginate.totalPage;
+            if (!lastPage) {
+                setPaginate({ page: paginate.page + 1, totalPage: paginate.totalPage });
             }
         },
         prev() {
