@@ -27,6 +27,7 @@ export default function Main() {
     useEffect(() => {
         const filtered = !!search ? results.filter(cat => cat.name.toLowerCase().includes(search.toLowerCase())) : results;
         setCats(filtered);
+        setPage(1);
     }, [results, search]);
 
     useEffect(() => {
