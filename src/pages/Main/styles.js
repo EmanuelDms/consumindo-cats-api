@@ -5,6 +5,7 @@ export const Container = styled.div`
     background-color: var(--white);
     border-radius: 4px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+
 `;
 
 export const Header = styled.header`
@@ -36,26 +37,28 @@ export const MainPage = styled.main`
     padding: 30px 20px;
 `;
 
-export const PageActions = styled.div`
+export const Paginate = styled.div`
+    margin: 30px auto auto;
+    font-weight: bold;
+
     width: 100%;
-    margin: 32px auto;
-    .controls {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+    div:not(.numbers div) {
+        
         display: flex;
         align-items: center;
         justify-content: center;
-
-        margin-top: 8px;
-    }
-
-    .controls div {
+        
+        padding: 10px;
         cursor: pointer;
 
-        /* border: 1px solid #eee; */
+        width: 40px;
+        height: 40px;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        font-size: 14;
     }
 `;
