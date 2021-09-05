@@ -8,10 +8,7 @@ export default function Main() {
     const [results, setResults] = useState([])
     const [cats, setCats] = useState([]);
     const [search, setSearch] = useState('');
-    const [paginate, setPaginate] = useState({
-        page: 1,
-        totalPage: 0
-    });
+    const [page, setPage] = useState(1);
 
     useEffect(() => {
         async function load() {
@@ -31,25 +28,8 @@ export default function Main() {
         setCats(filtered);
     }, [results, search]);
 
-    useEffect(() => {
-        setPaginate({ page: paginate.page, totalPage: Math.ceil(cats.length / 5) });
-    }, [cats, paginate.page]);
-
-    const handleControls = {
-        next() {
-
-            const lastPage = paginate.page >= paginate.totalPage;
-            if (!lastPage) {
-                setPaginate({ page: paginate.page + 1, totalPage: paginate.totalPage });
-            }
-        },
-        prev() {
-            const isFirstPage = paginate.page < 2;
-
-            if (!isFirstPage) {
-                setPaginate({ page: paginate.page - 1, totalPage: paginate.totalPage });
-            }
-        }
+    const handleChange = (event, value) => {
+        setPage(value);
     };
 
     return (
@@ -61,15 +41,7 @@ export default function Main() {
                     <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
                 </Form>
             </Header>
-            <Paginate>
-                <div className="first">&#171;</div>
-                <div className="prev" onClick={() => handleControls.prev()}>&lt;</div>
-                <div className="numbers">
-                    <div>{paginate.page}</div>
-                </div>
-                <div className="next" onClick={() => handleControls.next()}>&gt;</div>
-                <div className="last">&#187;</div>
-            </Paginate>
+            <Paginate count={Math.ceil(cats.length / 5)} page={page} onChange={handleChange} />
             <MainPage>
                 <CatList cats={cats} />
             </MainPage>

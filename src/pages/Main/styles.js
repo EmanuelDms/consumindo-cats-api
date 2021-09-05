@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+import Pagination from '@material-ui/lab/Pagination';
+
+
 export const Container = styled.div`
     max-width: 100vw;
     background-color: var(--white);
@@ -37,28 +40,9 @@ export const MainPage = styled.main`
     padding: 30px 20px;
 `;
 
-export const Paginate = styled.div`
-    margin: 30px auto auto;
-    font-weight: bold;
-
-    width: 100%;
-    
+export const Paginate = styled(Pagination)`
     display: flex;
-    align-items: center;
     justify-content: center;
-
+    margin-top: 30px;
     
-    div:not(.numbers div) {
-        
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-        padding: 10px;
-        cursor: pointer;
-
-        width: 40px;
-        height: 40px;
-
-    }
 `;
