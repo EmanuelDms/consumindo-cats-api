@@ -9,6 +9,7 @@ export default function Main() {
     const [cats, setCats] = useState([]);
     const [search, setSearch] = useState('');
     const [page, setPage] = useState(1);
+    const [count, setCount] = useState(1);
 
     useEffect(() => {
         async function load() {
@@ -21,12 +22,16 @@ export default function Main() {
         }
 
         load();
-    }, [])
+    }, []);
 
     useEffect(() => {
         const filtered = !!search ? results.filter(cat => cat.name.toLowerCase().includes(search.toLowerCase())) : results;
         setCats(filtered);
     }, [results, search]);
+
+    useEffect(() => {
+        setCount(Math.ceil(cats.length / 5));
+    }, [cats]);
 
     const handleChange = (event, value) => {
         setPage(value);
@@ -41,9 +46,9 @@ export default function Main() {
                     <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
                 </Form>
             </Header>
-            <Paginate count={Math.ceil(cats.length / 5)} page={page} onChange={handleChange} />
+            <Paginate count={count} page={page} onChange={handleChange} />
             <MainPage>
-                <CatList cats={cats} />
+                <CatList cats={cats} page={page} count={count} />
             </MainPage>
         </Container>
     )
