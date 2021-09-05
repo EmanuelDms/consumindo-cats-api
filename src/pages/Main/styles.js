@@ -35,3 +35,27 @@ export const Form = styled.form`
 export const MainPage = styled.main`
     padding: 30px 20px;
 `;
+
+export const PageActions = styled.div`
+    width: 100%;
+    margin: 32px auto;
+    .controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-top: 8px;
+    }
+
+    .controls div {
+        cursor: pointer;
+
+        /* border: 1px solid #eee; */
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 14;
+    }
+`;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Header, Form, MainPage } from './styles';
+import { Container, Header, Form, MainPage, PageActions } from './styles';
 import CatList from '../../components/CatList';
 
 import CatRepository from "../../repositories/CatRepository";
@@ -39,6 +39,17 @@ export default function Main() {
             <MainPage>
                 <CatList cats={cats} />
             </MainPage>
+            <PageActions>
+                <div class="controls">
+                    <div class="first">&#171;</div>
+                    <div class="prev">&lt;</div>
+                    <div class="numbers">
+                        <div>1</div>
+                    </div>
+                    <div class="next">&gt;</div>
+                    <div class="last">&#187;</div>
+                </div>
+            </PageActions>
         </Container>
     )
 }
