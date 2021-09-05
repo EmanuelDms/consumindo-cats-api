@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CatCard from './CatCard';
+import { CatCardStyled } from "./styles";
 
 export default function CatList({ cats }) {
     const [expandedIndex, setExpandedIndex] = useState(0);
@@ -22,7 +22,13 @@ export default function CatList({ cats }) {
         <>
             {
                 cats.map((cat, index) => (
-                    <CatCard onClick={() => handleClick(index)} expanded={!willCloseCard ? index === expandedIndex : false} key={index} index={index} cat={cat} />
+                    <CatCardStyled
+                        onClick={() => handleClick(index)}
+                        expanded={!willCloseCard ? index === expandedIndex : false}
+                        key={index}
+                        index={index}
+                        cat={cat}
+                    />
                 ))
             }
         </>
