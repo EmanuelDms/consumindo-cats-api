@@ -13,7 +13,7 @@ export function PaginationProvider({ children }) {
     }, [items.length]);
 
     return (
-        <PaginationContext.Provider value={{ page, numberOfPages, setPage, setNumberOfPages, items, setItems, perPage }}>
+        <PaginationContext.Provider value={{ page, setPage, numberOfPages, setNumberOfPages, items, setItems, perPage }}>
             {children}
         </PaginationContext.Provider>
     )
