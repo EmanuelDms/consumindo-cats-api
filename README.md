@@ -4,7 +4,7 @@ A [React.js](https://reactjs.org/) application using:
 
 - [Repository Pattern](https://youtu.be/fPMUBf6w3Gg): Decoupling your code from the data layer
 - [The Cat Api](https://www.thecatapi.com): Cat as Service
-- [Material UI](https://material-ui.com/pt/): Accordion, Pagination and Roboto Font
+- [Material UI](https://material-ui.com/pt/): Accordion, Pagination, Linear Progress and Roboto Font
 - [Axios](https://axios-http.com/): Promise based HTTP Client
 
 [Click here](https://drive.google.com/file/d/1R84K9O0iy8sGlDt3UWkL_eeSLILhn_Bk/view?usp=sharing) to see full description about the project.
