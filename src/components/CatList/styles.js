@@ -57,7 +57,6 @@ export const AccordionDetailsStyled = styled(AccordionDetails)`
 
     & {
         margin-left: 240px;
-        /* background-color: red; */
     }
 
     p {
