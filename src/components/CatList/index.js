@@ -2,21 +2,20 @@ import React, { useState, useEffect } from "react";
 import { usePagination } from "../../contexts/PaginationContext";
 import { CatCardStyled } from "./styles";
 
-export default function CatList({ cats }) {
+export default function CatList() {
     const [expandedIndex, setExpandedIndex] = useState(0);
     const [willCloseCard, setWillCloseCard] = useState(false);
     const [paginatedCats, setPaginatedCats] = useState([]);
-    const { page } = usePagination();
+    const { page, items, perPage } = usePagination();
 
     useEffect(() => {
-        let perPage = 5;
         let pageIndexed = page - 1;
 
         let start = pageIndexed * perPage;
         let end = start + perPage;
 
-        setPaginatedCats(cats.slice(start, end));
-    }, [page, cats]);
+        setPaginatedCats(items.slice(start, end));
+    }, [page, items, perPage]);
 
     const handleClick = (clickedIndex) => {
 
@@ -28,7 +27,7 @@ export default function CatList({ cats }) {
             return;
         }
 
-        setWillCloseCard(true)
+        setWillCloseCard(true);
     }
 
     return (

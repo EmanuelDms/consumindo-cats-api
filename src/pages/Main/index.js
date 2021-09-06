@@ -6,10 +6,9 @@ import CatRepository from "../../repositories/CatRepository";
 import { usePagination } from '../../contexts/PaginationContext';
 
 export default function Main() {
-    const [results, setResults] = useState([])
-    const [cats, setCats] = useState([]);
+    const [results, setResults] = useState([]);
     const [search, setSearch] = useState('');
-    const { page, numberOfPages, setPage, setCount } = usePagination();
+    const { page, numberOfPages, setPage, setItems } = usePagination();
 
     useEffect(() => {
         async function load() {
@@ -26,13 +25,9 @@ export default function Main() {
 
     useEffect(() => {
         const filtered = !!search ? results.filter(cat => cat.name.toLowerCase().includes(search.toLowerCase())) : results;
-        setCats(filtered);
+        setItems(filtered);
         setPage(1);
-    }, [results, search]);
-
-    useEffect(() => {
-        setCount(cats.length);
-    }, [cats.length]);
+    }, [results, search, setPage, setItems]);
 
     const handleChange = (event, value) => {
         setPage(value);
@@ -49,7 +44,7 @@ export default function Main() {
             </Header>
             <Paginate count={numberOfPages} page={page} onChange={handleChange} />
             <MainPage>
-                <CatList cats={cats} />
+                <CatList />
             </MainPage>
         </Container>
     )
