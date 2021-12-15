@@ -8,7 +8,6 @@ A [React.js](https://reactjs.org/) application using:
 - [Axios](https://axios-http.com/): Promise based HTTP Client
 - [Context API](https://reactjs.org/docs/context.html): Provides a way to pass data through the component tree without having to pass props down manually at every level
 
-[Click here](https://drive.google.com/file/d/1R84K9O0iy8sGlDt3UWkL_eeSLILhn_Bk/view?usp=sharing) to see full description about the project.
 ## Using the application
 *Considering you [cloned](https://www.freecodecamp.org/news/git-clone-branch-how-to-clone-a-specific-branch/) the main branch:*
 
